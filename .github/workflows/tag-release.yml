@@ -1,0 +1,29 @@
+name: Release Tag Validator
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  validate-and-release:
+    name: Validate package.json and create release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Validate package.json exists and is parseable
+        run: |
+          if [ ! -f package.json ]; then
+            echo "❌ package.json not found!"
+            exit 1
+          fi
+          jq . package.json > /dev/null || exit 1
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
