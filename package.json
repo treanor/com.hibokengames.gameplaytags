@@ -1,11 +1,27 @@
 {
-    "name": "com.hibokengames.gameplaytags",
-    "version": "0.1.0",
-    "displayName": "Gameplaytags",
-    "description": "Gameplaytags package by Hiboken Games.",
-    "unity": "6000.0",
-    "author": {
-        "name": "Hiboken Games",
-        "email": "dev@hiboken.games"
+  "name": "com.hibokengames.gameplaytags",
+  "version": "1.0.0",
+  "displayName": "Gameplay Tags",
+  "description": "A lightweight, efficient, and modular gameplay tag system for Unity, inspired by Unreal Engine's Gameplay Tags. Use it to categorize and query game elements using hierarchical tags.",
+  "unity": "6000.0",
+  "keywords": [
+    "tags",
+    "gameplay",
+    "categorization",
+    "query",
+    "hierarchy"
+  ],
+  "author": {
+    "name": "Hiboken Games",
+    "email": "dev@hiboken.games",
+    "url": "https://hiboken.games"
+  },
+  "dependencies": {},
+  "samples": [
+    {
+      "displayName": "Usage Examples",
+      "description": "Contains example scripts showing how to use the gameplay tag system in various scenarios",
+      "path": "Samples~/UsageExamples"
     }
+  ]
 }

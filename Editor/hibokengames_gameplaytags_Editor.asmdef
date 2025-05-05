@@ -1,7 +1,12 @@
 {
-  "name": "hibokengames_gameplaytags_Editor",
-  "references": [],
-  "includePlatforms": [],
+  "name": "HibokenGames.GameplayTags.Editor",
+  "rootNamespace": "HibokenGames.GameplayTags.Editor",
+  "references": [
+    "HibokenGames.GameplayTags.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
   "overrideReferences": false,

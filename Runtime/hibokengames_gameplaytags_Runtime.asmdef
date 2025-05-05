@@ -1,5 +1,6 @@
 {
-  "name": "hibokengames_gameplaytags_Runtime",
+  "name": "HibokenGames.GameplayTags.Runtime",
+  "rootNamespace": "HibokenGames.GameplayTags",
   "references": [],
   "includePlatforms": [],
   "excludePlatforms": [],
