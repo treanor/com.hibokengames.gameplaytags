@@ -1,0 +1,11 @@
+{
+    "name": "com.hibokengames.gameplaytags",
+    "version": "0.1.0",
+    "displayName": "Gameplaytags",
+    "description": "Gameplaytags package by Hiboken Games.",
+    "unity": "6000.0",
+    "author": {
+        "name": "Hiboken Games",
+        "email": "dev@hiboken.games"
+    }
+}
