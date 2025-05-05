@@ -4,6 +4,13 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (without v prefix)'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -24,9 +31,20 @@ jobs:
           fi
           jq . package.json > /dev/null || exit 1
 
+      - name: Set tag name for manual triggers
+        if: github.event_name == 'workflow_dispatch' && inputs.version != ''
+        run: |
+          echo "RELEASE_TAG=v${{ inputs.version }}" >> $GITHUB_ENV
+
+      - name: Set tag name for tag pushes
+        if: github.event_name == 'push'
+        run: |
+          echo "RELEASE_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           generate_release_notes: true
+          tag_name: ${{ env.RELEASE_TAG || github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
